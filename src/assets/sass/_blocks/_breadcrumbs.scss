@@ -1,0 +1,16 @@
+.breadcrumbs {
+	font-size:      .9em;
+	//margin-bottom:  $main-gap;
+	margin:         0;
+	padding:        10px 10px;
+	text-transform: uppercase;
+
+	&__sep {
+		font-size: 1.5em;
+	}
+
+	&__link {
+		padding: 10px;
+		color:   white;
+	}
+}

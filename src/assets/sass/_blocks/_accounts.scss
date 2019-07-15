@@ -1,0 +1,19 @@
+@import "../variables";
+
+.accounts {
+	font-size:        31px;
+	line-height:      1.2;
+	flex:             1 1 160px;
+	height:           154px;
+	margin:           $small-gap;
+	padding:          14px 20px;
+	color:            white;
+	border-radius:    0 36px;
+	background-image: linear-gradient(to right, #442fe6, #a642b2);
+
+	&__header {
+		font-size:      1rem;
+		padding-bottom: 27px;
+		color:          #e86921;
+	}
+}

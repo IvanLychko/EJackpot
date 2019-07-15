@@ -1,0 +1,48 @@
+{
+  "name": "bangcash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd ethereum && truffle test",
+    "build": "cd ethereum && truffle compile --contracts_build_directory=../src/abi && cd .. && react-scripts build",
+    "start": "cd ethereum && truffle compile --contracts_build_directory=../src/abi && cd .. && react-scripts start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "i18next": "^17.0.3",
+    "moment": "^2.24.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-i18next": "^10.11.1",
+    "react-router-dom": "^5.0.1",
+    "truffle": "^5.0.26",
+    "web3": "^1.0.0-beta.55"
+  },
+  "devDependencies": {
+    "@types/i18next": "^12.1.0",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-i18next": "^8.1.0",
+    "@types/react-router-dom": "^4.3.4",
+    "@types/web3": "^1.0.18",
+    "node-sass": "^4.12.0",
+    "react-scripts": "^3.0.1",
+    "reactjs-popup": "^1.4.1",
+    "typescript": "^3.5.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

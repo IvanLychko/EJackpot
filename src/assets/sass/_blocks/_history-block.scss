@@ -1,0 +1,15 @@
+@import "../variables";
+
+.history-block {
+	margin-bottom: $main-gap;
+
+	&__visor {
+		font-size:        20.2px;
+		height:           42px;
+		padding-top:      12px;
+		text-align:       center;
+		color:            #5c83d6;
+		border-bottom:    5px solid #4b3385;
+		background-color: #5b3f9e;
+	}
+}

@@ -1,0 +1,47 @@
+.coin {
+  position: relative;
+
+  &__img {
+    width:         100px;
+    border-radius: 50%;
+    box-shadow:    2px 2px 10px 2px rgba(black, .3);
+    vertical-align: middle;
+  }
+
+  &__value {
+    position:   absolute;
+    color:      white;
+    width:      100%;
+    text-align: center;
+    font-size:  1.9em;
+    top:        31%;
+    left:       0;
+  }
+
+  &__variant {
+    font-size:  1.2em;
+    top:        37%;
+  }
+}
+
+.coin--small {
+  top: 8px;
+
+  .coin__img {
+    width: 50px;
+  }
+
+  .coin__value {
+    font-size: .9rem;
+  }
+}
+.coin--big {
+  .coin__img {
+    width: 160px;
+  }
+
+  .coin__value {
+    font-size: 2.5rem;
+    top: 34%;
+  }
+}

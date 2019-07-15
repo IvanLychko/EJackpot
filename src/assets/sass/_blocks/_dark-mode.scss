@@ -1,0 +1,26 @@
+.dark-mode {
+	display: none;
+
+	&:target {
+		position:         fixed;
+		z-index:          3;
+		top:              0;
+		left:             0;
+		display:          block;
+		width:            100%;
+		height:           100vh;
+		background-color: rgba(black, .7);
+	}
+}
+
+.dark-mode:target + .case-rookie .case-rookie__lottery-background {
+	box-shadow: 0 0 200px 0 #fdce0f, 0 0 20px 0 #fdce0f;
+}
+
+.dark-mode:target + .case-rookie .case-rookie__button--open {
+	display: none;
+}
+
+.dark-mode:target + .case-rookie .case-rookie__button--close {
+	display: inline-block;
+}

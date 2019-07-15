@@ -1,0 +1,49 @@
+@import "../variables";
+
+.stock {
+	display:         flex;
+	flex-flow:       row wrap;
+	justify-content: space-around;
+	padding-bottom:  $main-gap;
+
+	&__block-header {
+		padding-bottom: 6px;
+	}
+
+	&__panel {
+		flex:             1 1 250px;
+		margin:           $small-gap;
+		padding:          10px 20px;
+		text-transform:   uppercase;
+		color:            white;
+		background-image: linear-gradient(to right, #fdce50, #bc1888);
+
+		position: relative;
+
+		&:after {
+			position: absolute;
+			bottom: 1em;
+			right: 1em;
+			content:  url("../img/money.png");
+		}
+	}
+
+	&__panel-text {
+		font-size:      1.5em;
+		line-height:    1.2;
+		max-width:      490px;
+		padding-bottom: 40px;
+	}
+
+	&__block {
+		flex:          0 0 145px;
+		//height:        131px;
+		//margin-right:  21px;
+		margin:        11px;
+		padding:       10px 0;
+		text-align:    center;
+		color:         #fcbe04;
+		border:        3px dashed #f16c00;
+		border-radius: 5px;
+	}
+}

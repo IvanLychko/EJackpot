@@ -1,0 +1,116 @@
+@import "../variables";
+
+.case-rookie {
+	padding-bottom:   $main-gap;
+	color:            white;
+	background-color: #402978;
+
+	&__header {
+		font-size:        1.4rem;
+		margin:           0;
+		padding:          12px 20px;
+		text-transform:   uppercase;
+		color:            #fa3060;
+		background-color: #5b3f9e;
+	}
+
+	&__head {
+		font-size:      23px;
+		padding-bottom: 1rem;
+		border-bottom:  3px dashed #5b3f9e;
+	}
+
+	&__h3 {
+		font-size:      1.4rem;
+		margin:         0;
+		text-transform: uppercase;
+		color:          #fa3060;
+	}
+
+	&__container {
+		display:         flex;
+		flex-flow:       row wrap;
+		justify-content: space-around;
+		margin:          0;
+		padding:         10px 10px 20px;
+
+		&--coins {
+			justify-content: center;
+			padding:         10px 10px 20px;
+		}
+	}
+
+	&__item {
+		flex:    1 1 280px;
+		padding: 20px 10px;
+
+		&--lottery {
+			flex:   0 1 300px;
+			margin: 0 auto;
+			//padding: 20px 15px 25px;
+		}
+
+		&--info {
+			flex: 0 1 300px;
+		}
+	}
+
+	&__coin {
+		margin: 12px;
+	}
+
+	&__lottery {
+		position: relative;
+		z-index: 3;
+	}
+
+	&__lottery-background {
+		width:         290px;
+		border:        7px solid #f16c00;
+		border-radius: 15px;
+	}
+
+	&__lottery-result {
+		position:      absolute;
+		top:           49px;
+		left:          72px;
+		width:         160px;
+		border-radius: 50%;
+		box-shadow:    4px 6px 30px 6px rgba(0, 0, 0, 0.4);
+	}
+
+	&__text {
+		font-family: 'RobotoCondRegular', sans-serif;
+		line-height: 1.5;
+		padding:     15px 0;
+	}
+
+	&__status {
+		font-size: 23px;
+	}
+
+	&__value {
+		color: #fdce0f;
+	}
+
+	&__button-panel {
+		position:   absolute;
+		bottom:     -20px;
+		width:      100%;
+		text-align: center;
+	}
+
+	&__button {
+		font-size:      18px;
+		letter-spacing: 0;
+
+		&--close {
+			display:          none;
+			background-color: #f16c00;
+
+			&:hover {
+				background-color: lighten(#f16c00, 10%);
+			}
+		}
+	}
+}

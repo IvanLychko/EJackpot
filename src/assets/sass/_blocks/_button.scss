@@ -1,0 +1,43 @@
+.button {
+	font-size:        12px;
+	display:          inline-block;
+	padding:          1em 2em;
+	text-decoration:  none;
+	letter-spacing:   2px;
+	text-transform:   uppercase;
+	color:            white;
+	border-radius:    4rem;
+	background-color: #5c83d6;
+
+	&:hover {
+		text-decoration:  none;
+		background-color: #7192da;
+	}
+
+	&--header {
+		width:  126px;
+		height: 18px;
+		padding-right: 3em;
+		padding-left: 1em;
+
+	}
+
+	&--stock {
+		padding:    14px 32px;
+		text-align: center;
+	}
+
+	&--case-rookie {
+		padding:    1.2em 2em 1.2em 4.5em;
+		margin-top: 10px;
+		position: relative;
+		z-index: 0;
+
+		&:before {
+			position: absolute;
+			top:      1.3em;
+			left:    2em;
+			content:  url("../img/vk.png");
+		}
+	}
+}

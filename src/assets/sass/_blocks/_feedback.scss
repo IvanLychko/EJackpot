@@ -1,0 +1,41 @@
+.nav__link {
+  float: left;
+}
+
+.footer-feedback.nav__link:hover {
+  text-decoration: none !important;
+}
+
+.footer-feedback li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.footer-feedback ul li a {
+  color: white;
+}
+
+.footer-feedback ul li {
+  text-align: left;
+  text-transform: none;
+}
+
+.footer-feedback ul {
+  padding-inline-start: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav__link .footer-feedback {
+  text-decoration: none;
+}
+
+.footer__copy {
+  margin-top: -70px;
+}
+
+@media (max-width: 815px) {
+  .footer__copy {
+    margin-top: 0;
+  }
+}

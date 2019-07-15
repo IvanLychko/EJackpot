@@ -1,0 +1,52 @@
+//@import "reset";
+@import "fonts";
+
+@import "_blocks/a-NOT-BEM";
+@import "_blocks/nav";
+@import "_blocks/accounts";
+@import "_blocks/accounts-container";
+@import "_blocks/button";
+@import "_blocks/case";
+@import "_blocks/case-container";
+@import "_blocks/coin";
+@import "_blocks/eth";
+@import "_blocks/footer";
+@import "_blocks/header";
+@import "_blocks/history-block";
+@import "_blocks/history-container";
+@import "_blocks/logo";
+@import "_blocks/languages";
+@import "_blocks/feedback";
+
+// index page
+@import "_blocks/prizes";
+@import "_blocks/prizes-board";
+@import "_blocks/prizes-block";
+@import "_blocks/prizes-live";
+@import "_blocks/stock";
+@import "_blocks/stock-message";
+@import "_blocks/table";
+@import "_blocks/page";
+
+// profile page
+@import "_blocks/profile";
+@import "_blocks/breadcrumbs";
+
+// case-rookie page
+@import "_blocks/case-rookie";
+@import "_blocks/lottery-info";
+@import "_blocks/dark-mode";
+
+//popup
+@import "_blocks/popups";
+
+
+html {
+	background-color: #3b2560;
+	//width: 1920px;
+	background-image: url('../img/background-image.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+

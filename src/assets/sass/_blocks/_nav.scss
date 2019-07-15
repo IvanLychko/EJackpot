@@ -1,0 +1,75 @@
+.nav {
+  font-size: 0.9em;
+  text-transform: uppercase;
+
+  &__link {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1em;
+    text-decoration: none;
+    color: white;
+
+    &--wallet {
+      color: #f16c00;
+    }
+
+    &--fox {
+      position: relative;
+
+      &:after {
+        position: absolute;
+        top: 9px;
+        right: 15px;
+        content: url("../img/fox.png");
+      }
+    }
+
+    &--shield {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        top: 1.1em;
+        left: -2px;
+        content: url("../img/shield.png");
+      }
+    }
+
+    &--question {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        top: 1.1em;
+        left: -4px;
+        content: url("../img/question.png");
+      }
+    }
+
+    &--home {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        top: 1.1em;
+        left: -3px;
+        content: url("../img/home.png");
+      }
+    }
+
+    &--about {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        top: 1.1em;
+        left: -4px;
+        content: url("../img/about.png");
+      }
+    }
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+}

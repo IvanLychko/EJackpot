@@ -1,0 +1,76 @@
+.table {
+	background-color: #402978;
+	width:            100%;
+	padding-bottom:   30px;
+
+	&--fixed {
+		table-layout: fixed;
+	}
+
+	&__cell {
+		text-align: left;
+		color:      white;
+		padding:    17px 16px;
+		font-size:  18px;
+
+		&--amount {
+			text-align: center;
+			color:      #fdd563;
+		}
+
+		&--coin {
+			text-align: center;
+			padding: 5px 15px;
+		}
+
+		&--th {
+			font-size: 0.9em;
+			color: #f16c00;
+		}
+		&--th2 {
+			font-size:      1rem;
+			margin:         0;
+			text-transform: uppercase;
+			color:          #fa3060;
+			text-align: center;
+			padding: 15px;
+		}
+
+		&--column-1 {
+			width: 18.2%;
+		}
+
+		&--column-3 {
+			width: 18%;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.table--responsive {
+		.table__thead {
+			display: none;
+		}
+
+		.table__cell {
+			display:    block;
+			text-align: right;
+		}
+
+		.table__text {
+			width: 80%;
+		}
+
+		.table__cell:before {
+			content:        attr(data-label);
+			float:          left;
+			color: #f16c00;
+		}
+
+		.table__row {
+			margin-bottom: 10px;
+			display: block;
+			border-bottom: 2px solid #4b3385;
+		}
+	}
+}

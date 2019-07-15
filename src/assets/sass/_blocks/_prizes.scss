@@ -1,0 +1,39 @@
+@import "../variables";
+
+.prizes {
+	display:          flex;
+	flex-flow:        row nowrap;
+	background-color: #1b102e;
+	margin-bottom:    $main-gap;
+	align-items:      center;
+
+	&__container-live {
+		//display: flex;
+		//flex-flow: row nowrap;
+		//align-items: center;
+		//white-space: nowrap;
+		//position: absolute;
+
+	}
+
+	&__container-block {
+		display:         flex;
+		flex:            1 1 300px;
+		flex-flow:       row nowrap;
+		justify-content: center;
+		border-radius:   5px;
+	}
+
+	position: relative;
+
+	&:after {
+		position: absolute;
+		top:      12px;
+		right:    0;
+		content:  url("../img/triangle.png");
+
+		@media screen and (max-width: 550px) and (min-width: 0) {
+			display: none;
+		}
+	}
+}

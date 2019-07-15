@@ -1,0 +1,15 @@
+.prizes-block {
+  font-family: "RobotoBold", sans-serif;
+  text-align: center;
+  padding: 12px 8px;
+
+  &__text {
+    color: #fa3060;
+    font-size: 0.8em;
+  }
+
+  &__count {
+    color: white;
+    font-size: 1.4em;
+  }
+}

@@ -1,0 +1,82 @@
+.languages {
+  display: inline-block;
+  vertical-align: bottom;
+
+  &__current {
+    width: 35px;
+    height: 35px;
+    margin: 0 0 .5em 1em;
+    cursor: pointer;
+
+
+    &--ru {
+      background-image: url("../img/languages/ru.svg")
+    }
+
+    &--tr {
+      background-image: url("../img/languages/tr.svg")
+    }
+
+    &--kr {
+      background-image: url("../img/languages/kr.svg")
+    }
+
+    &--de {
+      background-image: url("../img/languages/de.svg")
+    }
+
+    &--ch {
+      background-image: url("../img/languages/ch.svg")
+    }
+
+    &--en {
+      background-image: url("../img/languages/en.svg")
+    }
+
+    &--es {
+      background-image: url("../img/languages/es.svg")
+    }
+  }
+
+  &__image {
+    width: 35px;
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    margin: 0;
+    padding: .75em;
+    border-radius: 5px;
+    background-color: #0e0e0e;
+
+    &--display {
+      display: block;
+      margin-left: -90px;
+    }
+  }
+
+  &__item {
+    padding: .2em;
+    list-style-type: none;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 40px;
+
+    }
+
+    img {
+      float: left;
+      margin-right: 5px;
+    }
+
+    span {
+      text-align: left;
+      color: white;
+      line-height: 36px;
+    }
+  }
+}

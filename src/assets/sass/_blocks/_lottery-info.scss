@@ -1,0 +1,78 @@
+.lottery-info {
+	font-size:     22px;
+	line-height:   1.5;
+	align-items:   center;
+	border:        3px dashed #5b3f9e;
+	border-radius: 7px;
+	max-width: 330px;
+
+	&__header {
+		color: #fa3060;
+	}
+
+	&__item {
+		padding:    1.5em;
+		text-align: center;
+
+		&:nth-of-type(1) {
+			border-bottom: 3px dashed #5b3f9e;
+		}
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotateY(180deg);
+	}
+}
+
+.loading .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+	animation: spin 0.6s linear infinite;
+}
+
+.flip-container {
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+.front, .back {
+	backface-visibility: hidden;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	-webkit-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	z-index: 2;
+	transform: rotateY(0deg);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transition: 0.6s;
+	-moz-transform: rotateY(0deg);
+	-o-transition: 0.6s;
+	-o-transform: rotateY(0deg);
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.back {
+	transform: rotateY(-180deg);
+}
