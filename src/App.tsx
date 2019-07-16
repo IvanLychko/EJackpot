@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer";
 import config from "./config";
-import ContractABI from './abi/BangCash.json';
+import ContractABI from './abi/EJackpot.json';
 import {Route, Switch} from "react-router";
 import Profile from "./components/Profile/Profile";
 import ProviderComponent from "./components/Provider";
@@ -25,7 +25,7 @@ const emptyAddress = "0x0000000000000000000000000000000000000000";
 export default class App extends React.Component {
     private readonly web3: Web3 = new Web3(window.web3
         ? window.web3.currentProvider
-        : new Web3.providers.HttpProvider("https://rinkeby.infura.io"),
+        : new Web3.providers.HttpProvider("https://mainnet.infura.io"),
         undefined, {transactionConfirmationBlocks: 1});
     state: IAppState = {address: "", contract: undefined, blockNumber: 0};
 

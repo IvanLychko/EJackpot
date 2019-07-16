@@ -5,7 +5,7 @@ pragma solidity 0.5.8;
 */
 contract DummyContract {
     function() external payable {}
-    function bangCashCall(address payable bangCash) external {
-        bangCash.transfer(1);
+    function testCall(address payable c) external {
+        c.transfer(1);
     }
 }
