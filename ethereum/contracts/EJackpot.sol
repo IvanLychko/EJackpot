@@ -1,3 +1,7 @@
+/**
+ *Submitted for verification at Etherscan.io on 2019-07-13
+*/
+
 pragma solidity 0.5.8;
 
 interface DateTimeAPI {
@@ -29,7 +33,7 @@ contract Ownable {
      * @dev Throws if called by any account other than the owner.
      */
     modifier onlyOwner() {
-        require(msg.sender == owner);
+        require(msg.sender == owner, "Called by unknown account");
         _;
     }
 
@@ -432,11 +436,6 @@ contract EJackpot is Ownable {
 
     function random() private view returns (uint8) {
         return uint8(uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty, msg.sender, userCasesCount[msg.sender]))) % 100) + 1;
-    }
-
-    modifier onlyOwner {
-        require(msg.sender == owner, "Called by unknown account");
-        _;
     }
 
     modifier notContract {

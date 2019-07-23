@@ -11,5 +11,5 @@ export default {
         {price: 2, name: "zoloto"}
     ],
     network: '1',
-    contract: "0xcA156752B25aFef77c53336e00cBb359e6F618b9"
+    contract: "0xdbac44c23964a8913ac102b78bb85bf58b01e5c6"
 }
