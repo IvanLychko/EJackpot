@@ -74,7 +74,7 @@ contract("EJackpot", accounts => {
         await callMakeBet(0);
     });
 
-    it("Should send 20% of casino profit to referrer with referrer address as parameter", async () => {
+    it("Should send 10% of casino profit to referrer with referrer address as parameter", async () => {
         const getInfo = () => Promise.all([
             web3.eth.getBalance(unknownAccount),
             web3.eth.getBalance(referrer),
@@ -87,7 +87,7 @@ contract("EJackpot", accounts => {
             .map(i => contract.betsPrizes(cases[0].toString(), i).then(m => m.toNumber() * (10**18/10000))));
         const prize = cases[0] + (balancePlayerAfter - balancePlayerBefore);
         const casinoProfit = cases[0] - prize;
-        const referrerPercent = casinoProfit > 0 ? casinoProfit * 0.2 : 0;
+        const referrerPercent = casinoProfit > 0 ? casinoProfit * 0.1 : 0;
 
         assert.notStrictEqual(prizes.indexOf(prize), -1, "Multiplier not found");
         assert.strictEqual(balanceReferrerAfter - balanceReferrerBefore, referrerPercent, "Invalid referrer reward");
@@ -95,7 +95,7 @@ contract("EJackpot", accounts => {
         assert.strictEqual(referralStatsAfter.count - referralStatsBefore.count, 1, "Invalid count in stats");
     });
 
-    it("Should send 20% of casino profit to referrer when referrer was already set", async () => {
+    it("Should send 10% of casino profit to referrer when referrer was already set", async () => {
         const getInfo = () => Promise.all([
             web3.eth.getBalance(unknownAccount),
             web3.eth.getBalance(referrer),
@@ -108,7 +108,7 @@ contract("EJackpot", accounts => {
             .map(i => contract.betsPrizes(cases[0].toString(), i).then(m => m.toNumber() * (10**18/10000))));
         const prize = cases[0] + (balancePlayerAfter - balancePlayerBefore);
         const casinoProfit = cases[0] - prize;
-        const referrerPercent = casinoProfit > 0 ? casinoProfit * 0.2 : 0;
+        const referrerPercent = casinoProfit > 0 ? casinoProfit * 0.1 : 0;
 
         assert.notStrictEqual(prizes.indexOf(prize), -1, "Multiplier not found");
         assert.strictEqual(balanceReferrerAfter - balanceReferrerBefore, referrerPercent, "Invalid referrer reward");
@@ -128,6 +128,9 @@ contract("EJackpot", accounts => {
         assert.strictEqual(referralStatsBefore1.count - referralStatsAfter1.count, 1, "Invalid count in stats1");
         assert.strictEqual(referralStatsAfter2.count - referralStatsBefore2.count, 1, "Invalid count in stats2");
     });
+
+    it("Should not be able to use contract address as referrer", () => handleErrorTransaction(() =>
+        contract.play.sendTransaction(DummyContract.address, {from: unknownAccount, value: cases[0].toString()})));
 
     it("Should not be able to withdraw ether from unknown account", () =>
         handleErrorTransaction(async () =>

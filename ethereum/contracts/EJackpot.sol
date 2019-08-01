@@ -284,19 +284,19 @@ contract EJackpot is Ownable {
     uint public usersCount = 0;
     uint public openedCases = 0;
     uint public totalWins = 0;
-    Probability[11] public probabilities;
-    mapping(uint => uint[12]) public betsPrizes;
+    Probability[1/*11*/] public probabilities;
+    mapping(uint => uint[11]) public betsPrizes;
     mapping(uint => bool) public cases;
-    uint[9] public casesArr = [
-        5 * 10 ** 16,
-        10 ** 17,
-        2 * 10 ** 17,
-        3 * 10 ** 17,
-        5 * 10 ** 17,
-        7 * 10 ** 17,
-        10 ** 18,
-        15 * 10 ** 17,
-        2 * 10 ** 18
+    uint[1/*9*/] public casesArr = [
+    5 * 10 ** 16/*,
+    10 ** 17,
+    2 * 10 ** 17,
+    3 * 10 ** 17,
+    5 * 10 ** 17,
+    7 * 10 ** 17,
+    10 ** 18,
+    15 * 10 ** 17,
+    2 * 10 ** 18*/
     ];
     mapping(uint => uint) public caseWins;
     mapping(uint => uint) public caseOpenings;
@@ -314,52 +314,52 @@ contract EJackpot is Ownable {
     */
     constructor(address _dateTimeAPI) public Ownable() {
         dateTimeAPI = DateTimeAPI(_dateTimeAPI);
-        for (uint i = 0; i < 9; i++) cases[casesArr[i]] = true;
-        probabilities[0] = Probability(1, 6);
-        probabilities[1] = Probability(7, 18);
-        probabilities[2] = Probability(19, 30);
-        probabilities[3] = Probability(31, 44);
-        probabilities[4] = Probability(45, 58);
-        probabilities[5] = Probability(59, 72);
-        probabilities[6] = Probability(73, 83);
-        probabilities[7] = Probability(84, 92);
-        probabilities[8] = Probability(93, 97);
-        probabilities[9] = Probability(98, 99);
-        probabilities[10] = Probability(100, 100);
+        for (uint i = 0; i < 1/*9*/; i++) cases[casesArr[i]] = true;
+        probabilities[0] = Probability(1, 100/*6*/);
+//        probabilities[1] = Probability(7, 18);
+//        probabilities[2] = Probability(19, 30);
+//        probabilities[3] = Probability(31, 44);
+//        probabilities[4] = Probability(45, 58);
+//        probabilities[5] = Probability(59, 72);
+//        probabilities[6] = Probability(73, 83);
+//        probabilities[7] = Probability(84, 92);
+//        probabilities[8] = Probability(93, 97);
+//        probabilities[9] = Probability(98, 99);
+//        probabilities[10] = Probability(100, 100);
 
         betsPrizes[5 * 10 ** 16] = [65, 100, 130, 170, 230, 333, 500, 666, 1350, 2000, 2500];
-        betsPrizes[10 ** 17] = [130, 200, 265, 333, 450, 666, 1000, 1350, 2650, 4000, 5000];
-        betsPrizes[2 * 10 ** 17] = [265, 400, 530, 666, 930, 1330, 2000, 2665, 5300, 8000, 10000];
-        betsPrizes[3 * 10 ** 17] = [400, 600, 800, 1000, 1400, 2000, 3000, 4000, 8000, 12000, 15000];
-        betsPrizes[5 * 10 ** 17] = [666, 1000, 1330, 1665, 2330, 3333, 5000, 6666, 13330, 20000, 25000];
-        betsPrizes[7 * 10 ** 17] = [950, 1400, 1850, 2330, 3265, 4665, 7000, 9330, 18665, 28000, 35000];
-        betsPrizes[10 ** 18] = [1330, 2000, 2665, 3333, 4666, 6666, 10000, 13330, 26660, 40000, 50000];
-        betsPrizes[15 * 10 ** 17] = [2000, 3000, 4000, 5000, 7000, 10000, 15000, 20000, 40000, 60000, 75000];
-        betsPrizes[2 * 10 ** 18] = [2665, 4000, 5330, 6666, 9350, 13330, 20000, 26665, 53330, 80000, 100000];
+//        betsPrizes[10 ** 17] = [130, 200, 265, 333, 450, 666, 1000, 1350, 2650, 4000, 5000];
+//        betsPrizes[2 * 10 ** 17] = [265, 400, 530, 666, 930, 1330, 2000, 2665, 5300, 8000, 10000];
+//        betsPrizes[3 * 10 ** 17] = [400, 600, 800, 1000, 1400, 2000, 3000, 4000, 8000, 12000, 15000];
+//        betsPrizes[5 * 10 ** 17] = [666, 1000, 1330, 1665, 2330, 3333, 5000, 6666, 13330, 20000, 25000];
+//        betsPrizes[7 * 10 ** 17] = [950, 1400, 1850, 2330, 3265, 4665, 7000, 9330, 18665, 28000, 35000];
+//        betsPrizes[10 ** 18] = [1330, 2000, 2665, 3333, 4666, 6666, 10000, 13330, 26660, 40000, 50000];
+//        betsPrizes[15 * 10 ** 17] = [2000, 3000, 4000, 5000, 7000, 10000, 15000, 20000, 40000, 60000, 75000];
+//        betsPrizes[2 * 10 ** 18] = [2665, 4000, 5330, 6666, 9350, 13330, 20000, 26665, 53330, 80000, 100000];
     }
 
     /**
      * @dev Shows the average winning rate in% with a normal distribution. For example, 10,000 = 100% or 7621 == 76.21%
      */
-     function showCoefs() external view returns(uint[9] memory result){
-         uint d = 10000;
+    function showCoefs() external view returns (uint[1/*9*/] memory result){
+        uint d = 10000;
 
-         for (uint casesIndex = 0; casesIndex < casesArr.length; casesIndex++) {
-             uint sum = 0;
-             uint casesVal = casesArr[casesIndex];
+        for (uint casesIndex = 0; casesIndex < casesArr.length; casesIndex++) {
+            uint sum = 0;
+            uint casesVal = casesArr[casesIndex];
 
-             for (uint i = 0; i < probabilities.length; i++) {
-                 sum+= multiplier*betsPrizes[casesVal][i]*(probabilities[i].to-probabilities[i].from+1);
-             }
+            for (uint i = 0; i < probabilities.length; i++) {
+                sum += multiplier * betsPrizes[casesVal][i] * (probabilities[i].to - probabilities[i].from + 1);
+            }
 
-             result[casesIndex]=((d*sum)/(casesVal*100));
-         }
-     }
+            result[casesIndex] = ((d * sum) / (casesVal * 100));
+        }
+    }
 
     /**
      * @dev Allows the user to open case and win one of the available prizes.
      */
-    function play(address payable referrer) external payable notContract {
+    function play(address payable referrer) external payable notContract(msg.sender, false) notContract(referrer, true) {
         if (msg.sender == owner) return;
         uint maxPrize = betsPrizes[msg.value][betsPrizes[msg.value].length - 1] * multiplier;
         require(cases[msg.value] && address(this).balance >= maxPrize, "Contract balance is not enough");
@@ -399,9 +399,9 @@ contract EJackpot is Ownable {
      */
     function determinePrize() private returns (uint) {
         uint8 chance = random();
-        uint[12] memory prizes = betsPrizes[msg.value];
+        uint[11] memory prizes = betsPrizes[msg.value];
         uint prize = 0;
-        for (uint i = 0; i < 11; i++) {
+        for (uint i = 0; i < 1/*11*/; i++) {
             if (chance >= probabilities[i].from && chance <= probabilities[i].to) {
                 prize = prizes[i] * multiplier;
                 break;
@@ -438,11 +438,13 @@ contract EJackpot is Ownable {
         return uint8(uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty, msg.sender, userCasesCount[msg.sender]))) % 100) + 1;
     }
 
-    modifier notContract {
-        uint size;
-        address addr = msg.sender;
-        assembly {size := extcodesize(addr)}
-        require(size <= 0, "Called by contract");
+    modifier notContract(address addr, bool referrer) {
+        if (addr != address(0x0)) {
+            uint size;
+            assembly {size := extcodesize(addr)}
+            require(size <= 0, "Called by contract");
+            if (!referrer) require(tx.origin == addr, "Called by contract");
+        }
         _;
     }
 }

@@ -1,4 +1,5 @@
 .idea
+/build
 /src/abi
 /node_modules
 npm-debug.log

@@ -24,8 +24,7 @@ class Cases extends React.PureComponent<T> {
                 (document.querySelector('#flip-toggle') as HTMLDivElement).classList.toggle('loading');
             }).then(receipt => {
                 const data = this.props.decodeLog(receipt);
-                console.log(data);
-                this.setState({price: this.props.price, prize: parseInt(data.prize.toString()) / 10 ** 18});
+                this.setState({price: this.props.price, prize: window.web3.fromWei(data.prize.toString())});
                 (document.querySelector('#flip-toggle') as HTMLDivElement).classList.toggle('loading');
                 (document.getElementsByClassName('case-rookie__button--open')[0] as HTMLAnchorElement).style.display = "block";
             }).catch(e => {
