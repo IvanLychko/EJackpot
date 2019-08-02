@@ -81,7 +81,7 @@ export default class App extends React.Component {
                     {this.state.address ? <Route exact path="/profile" render={() =>
                         <Profile contract={this.state.contract as Contract} address={this.state.address}/>}/> : ""}
                     <Route exact path="/cases/:price" render={props =>
-                        props.match.params.price === '1.5' || props.match.params.price === '2' ? "" :
+                        props.match.params.price !== '0.05' ? "" :
                             <Cases
                                 openCase={this.openCase.bind(this)}
                                 decodeLog={this.decodeLog.bind(this)}

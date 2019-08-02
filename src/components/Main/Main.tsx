@@ -17,7 +17,7 @@ class Main extends React.PureComponent<T> {
         if (!this.props.contract) return;
         Promise.all([
             Ethereum.callContract(this.props.contract, 'totalWins'),
-            ...config.coins.map(c => Ethereum.callContract(this.props.contract, 'caseOpenings', [(c.price * 10 ** 18).toString()])
+            ...config.coins.slice(0,1).map(c => Ethereum.callContract(this.props.contract, 'caseOpenings', [(c.price * 10 ** 18).toString()])
                 .then(openings => ({price: c.price, openings: parseInt(openings.toString())})))
         ]).then(data => {
             const [totalWins, ...caseOpenings] = data;
@@ -86,7 +86,7 @@ class Main extends React.PureComponent<T> {
                             <img className="case__coin coin__img" src={coinsMap[coin.price]} alt=""/>
                             <span className="coin__value">{coin.price}</span>
                         </div>
-                        {coin.price === 1.5 || coin.price === 2 ? "" :
+                        {coin.price !== 0.05 ? "" :
                              <a className="button case__button" href={"/cases/" + coin.price}>{this.props.t('more')}</a>}
                         <Consumer>
                             {context => <div className="case__range">

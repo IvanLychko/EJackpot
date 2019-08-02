@@ -66,7 +66,7 @@ export default class ProviderComponent extends React.PureComponent<IProvider> {
     }
 
     private getPrizes(): Promise<{ [k: number]: number[] }[]> {
-        return Promise.all(config.coins.map(c => Promise.all([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i =>
+        return Promise.all(config.coins.slice(0,1).map(c => Promise.all([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i =>
             Ethereum.callContract(this.props.contract, "betsPrizes", [(c.price * 10 ** 18).toString(), i])
                 .then(m => m.toNumber() / 10000))).then(prizes => ({[c.price]: prizes}))));
     }
