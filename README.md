@@ -1,2 +1,2 @@
 Contract address Rinkeby: 0xaA1b52AD1e6B6BF4686Ec9275CAc8418f4e77Ad4
-Contract address Mainnet: —
+Contract address Mainnet: — 0xa18CE00bD6D8912d5a7746145F1aE7FD44db89f2
