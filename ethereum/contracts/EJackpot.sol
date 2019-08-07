@@ -284,7 +284,7 @@ contract EJackpot is Ownable {
     uint public usersCount = 0;
     uint public openedCases = 0;
     uint public totalWins = 0;
-    Probability[1/*11*/] public probabilities;
+    Probability[11] public probabilities;
     mapping(uint => uint[11]) public betsPrizes;
     mapping(uint => bool) public cases;
     uint[1/*9*/] public casesArr = [
@@ -315,17 +315,17 @@ contract EJackpot is Ownable {
     constructor(address _dateTimeAPI) public Ownable() {
         dateTimeAPI = DateTimeAPI(_dateTimeAPI);
         for (uint i = 0; i < 1/*9*/; i++) cases[casesArr[i]] = true;
-        probabilities[0] = Probability(1, 100/*6*/);
-//        probabilities[1] = Probability(7, 18);
-//        probabilities[2] = Probability(19, 30);
-//        probabilities[3] = Probability(31, 44);
-//        probabilities[4] = Probability(45, 58);
-//        probabilities[5] = Probability(59, 72);
-//        probabilities[6] = Probability(73, 83);
-//        probabilities[7] = Probability(84, 92);
-//        probabilities[8] = Probability(93, 97);
-//        probabilities[9] = Probability(98, 99);
-//        probabilities[10] = Probability(100, 100);
+        probabilities[0] = Probability(1, 6);
+        probabilities[1] = Probability(7, 18);
+        probabilities[2] = Probability(19, 30);
+        probabilities[3] = Probability(31, 44);
+        probabilities[4] = Probability(45, 58);
+        probabilities[5] = Probability(59, 72);
+        probabilities[6] = Probability(73, 83);
+        probabilities[7] = Probability(84, 92);
+        probabilities[8] = Probability(93, 97);
+        probabilities[9] = Probability(98, 99);
+        probabilities[10] = Probability(100, 100);
 
         betsPrizes[5 * 10 ** 16] = [65, 100, 130, 170, 230, 333, 500, 666, 1350, 2000, 2500];
 //        betsPrizes[10 ** 17] = [130, 200, 265, 333, 450, 666, 1000, 1350, 2650, 4000, 5000];
@@ -401,7 +401,7 @@ contract EJackpot is Ownable {
         uint8 chance = random();
         uint[11] memory prizes = betsPrizes[msg.value];
         uint prize = 0;
-        for (uint i = 0; i < 1/*11*/; i++) {
+        for (uint i = 0; i < 11; i++) {
             if (chance >= probabilities[i].from && chance <= probabilities[i].to) {
                 prize = prizes[i] * multiplier;
                 break;
@@ -448,3 +448,5 @@ contract EJackpot is Ownable {
         _;
     }
 }
+
+//0x1fb8a16257d83931ebfd488881f00b89093427aa
