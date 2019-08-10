@@ -36,22 +36,19 @@ class Footer extends React.PureComponent<WithTranslation> {
             <br/>
             <br/>
             <div className="partners">
-                <a href="https://dappradar.com/app/1332/playtowin" target="_blank">
+                <a href="https://dappradar.com/app/1612/e-jackpot" target="_blank">
                     <img style={{marginRight: "8px"}} src={dappRadar} alt=""/>
                 </a>
                 <a href="" target="_blank">
                     <img style={{marginRight: "8px"}} src={dappVolume} alt=""/>
                 </a>
-                <a href="https://www.stateofthedapps.com/dapps/playtowin" target="_blank">
+                <a href="https://www.stateofthedapps.com/dapps/e-jackpot" target="_blank">
                     <img style={{marginRight: "8px"}} src={stateOfDrafs} alt=""/>
                 </a>
-                <a href="http://superdapps.com/dapp/playtowin-io/" target="_blank">
+                <a href="https://superdapps.com/dapp/e-jackpot-cc/" target="_blank">
                     <img style={{marginRight: "8px"}} src={S} alt=""/>
                 </a>
-                <a href="http://godapp.com/detail?gameid=6475" target="_blank">
-                    <img style={{marginRight: "8px"}} src={goDapp} alt=""/>
-                </a>
-                <a href="https://www.dapp.com/dapp/playtowin-io" target="_blank">
+                <a href="https://www.dapp.com/ru/dapp/e-jackpot" target="_blank">
                     <img style={{marginRight: "8px"}} src={dapp} alt=""/>
                 </a>
             </div>
