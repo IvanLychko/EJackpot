@@ -39,9 +39,6 @@ class Footer extends React.PureComponent<WithTranslation> {
                 <a href="https://dappradar.com/app/1612/e-jackpot" target="_blank">
                     <img style={{marginRight: "8px"}} src={dappRadar} alt=""/>
                 </a>
-                <a href="" target="_blank">
-                    <img style={{marginRight: "8px"}} src={dappVolume} alt=""/>
-                </a>
                 <a href="https://www.stateofthedapps.com/dapps/e-jackpot" target="_blank">
                     <img style={{marginRight: "8px"}} src={stateOfDrafs} alt=""/>
                 </a>
